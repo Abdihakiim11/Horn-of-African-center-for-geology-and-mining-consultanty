@@ -438,3 +438,90 @@ nav ul li a.highlight {
         margin: 0 10px;
     }
 }
+/* --- MOBILE NAVIGATION LOGIC --- */
+.nav-btn {
+    display: none; /* Hidden on desktop */
+}
+
+#nav-check {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-btn {
+        display: inline-block;
+        cursor: pointer;
+    }
+    .nav-btn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+        transition: 0.3s;
+    }
+
+    .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #1a1a1a;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 80px;
+        left: 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        padding: 20px;
+        border-bottom: 1px solid #333;
+    }
+
+    /* When checkbox is checked, show menu */
+    #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    /* --- HERO SECTION MOBILE --- */
+    .hero h1 {
+        font-size: 2rem; /* Smaller text on mobile */
+    }
+
+    /* --- SERVICES GRID MOBILE --- */
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        gap: 20px;
+    }
+
+    /* --- WHY CHOOSE US MOBILE --- */
+    .why-choose-container {
+        grid-template-columns: 1fr; /* Stack mission and services */
+    }
+    
+    .attributes-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns instead of 3 */
+    }
+
+    .service-highlights {
+        flex-direction: column; /* Stack boxes */
+    }
+
+    /* --- FOOTER MOBILE --- */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+
+    /* --- EMAIL CARD MOBILE --- */
+    .email-card {
+        padding: 20px;
+        width: 90%;
+    }
+}
